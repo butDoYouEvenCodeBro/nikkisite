@@ -1,0 +1,24 @@
+<%- include ('partials/header') %>
+
+
+<div class="upload-block">
+    <h1>Hey guy! Upload your new and amazing work to your gallery!</h1>
+    <br>
+    <form action="/upload" enctype="multipart/form-data" method="post">
+        <div>
+            <div class="radiolist">
+                Select Art Type:
+                <input type="radio" id="digital" name="art_type" value="digital" required>
+                <label for="digital">Digital Art</label>
+                <input type="radio" id="sketchwork" name="art_type" value="sketchwork" required>
+                <label for="sketchwork">Sketchwork</label>
+            </div>
+            <label for="myFile" class="form-label">Upload your file here</label>
+            <input required class="form-control" type="file" id="myFile" name="img" multiple>
+        </div>
+        <input class="submit-btn" type='submit' value="Upload">
+    </form>
+</div>
+
+
+<%- include ('partials/footer') %>

@@ -1,0 +1,123 @@
+<%- include ('partials/header') %>
+
+<nav id="home" class="navbar navbar-expand-lg navbar-light gradient-background">
+    <div  class="container-fluid ">
+        <a class="navbar-brand" href="/">
+            <h1 class="nav-title hover-text">NIKHITA</h1><br>
+            <h1 class="nav-title hover-text">WADHWA</h1>
+        </a>
+        <button class=" span4 navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse flex-row-reverse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#about-me">
+                        <h2 class="nav-headings">About Me</h2>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#gallery">
+                        <h2 class="nav-headings">Gallery</h2>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">
+                        <h2 class="nav-headings hover-text">Contact Me</h2>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div class="about" id="about-me">
+
+    <h3 class="about-title">About Me</h3>
+    <p>Hi there, I'm Nikhita. I am a self taught artist living in Okinawa, Japan. I mostly paint as a hobby but
+        my goal
+        is to one day be able to do this for a living. I also teach English to local kids here and am a mama to
+        the
+        sweetest four year old.
+    </p>
+
+</div>
+
+<div class="img-gallery" id="gallery">
+    <h3 class="gallery-title">Gallery</h3>
+    <form action="/galleryOption" method="post">
+        <div class="dropdown ">
+            <div class="dropdown  ">
+                <button class="dropbtn btn">Select a List:</button>
+                <div class="dropdown-content btn">
+                    <a class="middle" href="/gallery/digital">Digital Art</a>
+                    <a  href="/gallery/sketchwork">Sketchwork</a>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="container ">
+
+        <% for( let i = 0; i < images.length; i++ ) { %>
+        <figure>
+            <img onclick="openModal();currentSlide(i)" class="hover-shadow cursor" src="/images/gallery/<%=images[i]%>" onerror="this.onerror=null; this.src='Default.jpg'"
+                alt="">
+        </figure>
+        <% } %>
+        
+    </div>
+</div>
+
+<section>
+    <h3 class="contact-title" id="contact">Stay in Touch!</h3>
+    <div class="contact_me">
+
+
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-9 col-lg-7 col-xl-7">
+                <div class="card" style="border-radius: 15px;">
+                    <div class="card-body p-5">
+
+                        <form action="/contact" method="post">
+
+                            <div class="form-outline mb-4">
+                                <input type="text" id="form3Example1cg" name="name" class="form-control form-control-lg" placeholder="">
+                                <label class="form-label" for="form3Example1cg"  style="margin-left: 0px;">Your Name</label>
+              
+                            </div>
+
+                            <div class="form-outline mb-4">
+                                <input type="email" id="form3Example3cg" name="email" class="form-control form-control-lg">
+                                <label class="form-label" for="form3Example3cg" style="margin-left: 0px;">Your
+                                    Email</label>
+
+                            </div>
+
+                            <div class="form-check d-flex justify-content-center mb-5">
+                                <input required class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg">
+                                <label class="form-check-label" for="form2Example3g">
+                                    Yup! Sign Me Up for an email when there is new art.
+                                </label>
+                            </div>
+
+                            <div class="d-flex justify-content-center">
+                                <button type="submit"
+                                    class="btn dropbtn btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                            </div>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        </form>
+    </div>
+</section>
+
+
+<%- include ('partials/footer') %>

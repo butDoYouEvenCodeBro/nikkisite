@@ -1,0 +1,73 @@
+<%- include ('partials/header') %>
+
+<nav class="navbar navbar-expand-lg navbar-light gradient-background">
+    <div class="container-fluid ">
+        <a class="navbar-brand " href="/">
+            <h1 class="nav-title">NIKHITA</h1><br>
+            <h1 class="nav-title">WADHWA</h1>
+        </a>
+        <button class=" span4 navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse flex-row-reverse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#about-me">
+                        <h2 class="nav-headings">About Me</h2>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#gallery">
+                        <h2 class="nav-headings">Gallery</h2>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <h2 class="nav-headings">Contact Me</h2>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="img-gallery" id="gallery">
+    <h3 class="gallery-title"><%=title%></h3>
+    <form action="/galleryOption" method="post">
+        <div class="dropdown">
+            <div class="dropdown container">
+                <button disabled class="dropbtn" onchange="this.form.submit()">Select a List:</button>
+                <div class="dropdown-content btn">
+                    <a href="/gallery/digital">Digital Art</a>
+                    <a href="/gallery/sketchwork">Sketchwork</a>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="container ">
+
+        <% for( let i = 0; i < images.length; i++ ) { %>
+        <figure>
+            <img id="myImg" src="/images/gallery/<%=images[i]%>" onerror="this.onerror=null; this.src='Default.jpg'"
+                alt="">
+            <input type="hidden" id="imgID" value="img<%=i%>">
+        </figure>
+        <div id="myModal" class="modal">
+
+            <!-- The Close Button -->
+            <span class="close">&times;</span>
+
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="img01">
+
+            <!-- Modal Caption (Image Text) -->
+            <div id="caption"></div>
+        </div>
+        <% } %>
+
+    </div>
+</div>
+
+
+<%- include ('partials/footer') %>
