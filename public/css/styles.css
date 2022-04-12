@@ -12,7 +12,7 @@
   font-family: 'Raleway Dots', cursive;
   font-weight: 500;
   font-size: 6rem;
-  color: rgb(235, 219, 201);
+  color: rgb(248, 238, 226);
 }
 
 .nav-headings {
@@ -301,7 +301,7 @@ img.hover-shadow {
 }
 
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 900px) {
   .nav-title {
     font-size: 3rem;
   }
