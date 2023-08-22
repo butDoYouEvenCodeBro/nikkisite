@@ -1,7 +1,5 @@
-/* Navbar */
 .gradient-background {
-  background: rgb(152, 138, 119);
-  background: linear-gradient(14deg, rgb(152, 138, 119, 1) 43%, rgb(232, 213, 181) 75%, rgba(212, 185, 156, 1) 90%);
+  background: linear-gradient(14deg, rgba(152, 138, 119, 1) 43%, rgba(232, 213, 181, 1) 75%, rgba(212, 185, 156, 1) 90%);
 }
 
 .navbar {
@@ -26,9 +24,8 @@
 }
 
 /* About Me */
-
 .about {
-  padding: 100px 0px 0px;
+  padding: 100px 0;
   text-align: center;
   max-width: 484px;
   margin: 50px auto 100px;
@@ -38,19 +35,17 @@
   padding-bottom: 30px;
 }
 
-
 /* Gallery */
-
 .img-gallery {
   background-color: rgb(250, 246, 241);
   padding-bottom: 150px;
 }
 
 .gallery-title {
-  padding: 100px 0px 0px;
+  padding: 100px 0 30px;
   text-align: center;
   max-width: 484px;
-  margin: 0px auto 30px;
+  margin: 0 auto;
 }
 
 .img-gallery .container {
